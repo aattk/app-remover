@@ -7,17 +7,19 @@ class appRemover():
         self.deviceAppSync()
         self.deviceAppSync()
         self.appListEdit()
-        self.topBar()
+        self.home()
 
     def topBar(self):
         os.system("cls")
         print("#".center(100, "#"))
         print("APP ROMEVER v0.01 [No Root]".center(100, " "))
         print("#".center(100, "#"))
+        
+    def home(self):
+        self.topBar()
         self.appNum = len(self.appList)
         info = "Connection :",str(self.connectionState),"App Number : ",str(self.appNum)
-        print(self.side_by_side(info,20,1))
-
+        print(self.side_by_side(info,14,1))
     def appRemove(self):
         pass
 
@@ -28,6 +30,7 @@ class appRemover():
         pass
 
     def deviceAppSync(self):
+        self.topBar()
         try:
             os.system('platform-tools\\adb.exe shell "pm list packages -f" > app-list')
             self.connectionState = True
